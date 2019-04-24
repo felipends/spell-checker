@@ -12,12 +12,22 @@ Using as reference for the dictionary the file `instances/dic.txt`.
 
 ## Some results
 
+### For the dictionary
+
+Using `instances/dic.txt`
+
 * 307855 words on the dictionary
 * 262144 buckets
 * 86008 collisions (handled by chaining) 
 * 2 elemnts per colision avarage
+
+### For the test
+
+Using `instances/constituicao.txt` as instance
+
+* 6962 words checked
 * 4787 words failed the spell-checking
-* checkage time 3.642ms
+* total checkage time 3.642ms
 
 ## Hash function initially used
 
