@@ -10,7 +10,7 @@ Using as reference for the dictionary the file `instances/dic.txt`.
 ## Hash function initially used
 
 ```C
-size_t string_hash( const char* str ){```
+size_t string_hash( const char* str ){
 	size_t hash = 0;
 	for(size_t i = 0; i < strlen(str); i++){
 		hash += str[i];
