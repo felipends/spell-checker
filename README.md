@@ -6,6 +6,7 @@ Using as reference for the dictionary the file `instances/dic.txt`.
 * 307855 words on the dictionary
 * 262144 buckets
 * 86008 collisions (handled by chaining) 
+* 2 elemnts per colision avarage
 
 ## Hash function initially used
 
