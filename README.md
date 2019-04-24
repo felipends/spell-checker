@@ -1,11 +1,13 @@
 # Spell-checker Hash-table based
 
-A example of spell-checking algorithm using a hash-table based dictionary.
+An example of spell-checking algorithm using a hash-table based dictionary.
+
 Using as reference for the dictionary the file `instances/dic.txt`.
 
 ## Usage
 
 `$ gcc -O3 main.c -o run`
+
 `$ ./run instances/constituicao.txt`
 
 ## Some results
