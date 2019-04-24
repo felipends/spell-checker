@@ -25,7 +25,7 @@ Using `instances/dic.txt`
 
 Using `instances/constituicao.txt` as instance
 
-* 6962 words checked
+* 6982 words checked
 * 4787 words failed the spell-checking
 * total checkage time 3.642ms
 
