@@ -82,9 +82,6 @@ int main( int argc, char* argv[] ){
 	sll_deallocate(&fail_list);
 	sll_deallocate(&palavras_teste);
 	
-	free(palavras_teste);
-	free(no);
-
 	fclose(dic);
 	fclose(test);
 	
