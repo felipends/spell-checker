@@ -2,6 +2,8 @@
 
 An example of spell-checking algorithm using a hash-table based dictionary.
 
+Handling collisions by chaining.
+
 Using as reference for the dictionary the file `instances/dic.txt`.
 
 ## Usage
