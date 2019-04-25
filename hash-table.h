@@ -53,3 +53,12 @@ int compute_collisions( tSLL** table ){
 
 	return cols;
 }
+
+void table_deallocate( tSLL** table ){
+	for(size_t i = 0; i < NBUCKETS; i++){
+		if(table[i] == NULL) continue;
+		sll_deallocate(&table[i]);
+		free(table[i]);
+	}
+}
+

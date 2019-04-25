@@ -54,4 +54,3 @@ An adapted implemantation of one-at-a-time Bob Jenkins hash function, which can 
 
 1. File formated output
 2. Benchmark with others hash functions
-3. Deallocate all lists

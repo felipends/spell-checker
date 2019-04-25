@@ -76,6 +76,14 @@ int main( int argc, char* argv[] ){
 	printf("quantidade de palavras que falharam: %lu\n", fail_list->size);
 		
 	//sll_print_list(palavras_teste->head);
+	
+	//memory dealloc
+	table_deallocate(table);
+	sll_deallocate(&fail_list);
+	sll_deallocate(&palavras_teste);
+	
+	free(palavras_teste);
+	free(no);
 
 	fclose(dic);
 	fclose(test);

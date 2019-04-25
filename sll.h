@@ -50,14 +50,16 @@ void sll_preppend( tSLL** list, const char* val ){
 }
 
 //1 if foind 0 if not
-inline int sll_search( const tSLL* list, const char* val ){
+int sll_search( const tSLL* list, const char* val ){
 	if(list == NULL) return 0;
 	
 	Node* no = (Node*)malloc(sizeof(Node));
 	no = list->head;
 	
 	while(1){
-		if(strncmp(no->value, val, SLEN) == 0) return 1;
+		if(strncmp(no->value, val, SLEN) == 0) {
+			return 1;
+		}
 
 		if(no->next == NULL) break;
 
@@ -82,5 +84,16 @@ int collisions_check( const tSLL* list ){
 }
 
 void sll_deallocate( tSLL** list ){
-	free(*list);
+	Node** nop = malloc(sizeof(Node*));
+	Node** non = malloc(sizeof(Node*));
+	(*non) = (*list)->head;
+	while(1){
+		(*nop) = (*non)->next;
+		free(*non);
+		if((*nop) == NULL) break;
+		(*non) = (*nop);
+	}
+	(*list)->size = 0;
+	free(non);
+	free(nop);
 }
