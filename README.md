@@ -27,7 +27,7 @@ Using `instances/constituicao.txt` as instance
 
 * 6982 words checked
 * 4787 words failed the spell-checking
-* total checkage time 3.642ms
+* total checkage time 2.524ms
 
 ## Hash function initially used
 
@@ -54,3 +54,4 @@ An adapted implemantation of one-at-a-time Bob Jenkins hash function, which can 
 
 1. File formated output
 2. Benchmark with others hash functions
+3. Deallocate all lists
