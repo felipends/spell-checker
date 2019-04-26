@@ -27,7 +27,7 @@ int main( int argc, char* argv[] ){
 	dic = fopen("./instances/dic.txt", "rb");
 	test = fopen(argv[1], "rb");
 	
-	assert(dic != NULL && test != NULL);
+	assert(dic != NULL && test != NULL && argc > 1);
 	
 	int palavras_count = 0;
 	char palavra[SLEN];
@@ -44,7 +44,9 @@ int main( int argc, char* argv[] ){
 		table_insert(&table[string_hash(palavra)], palavra);
 		palavras_count++;
 	}
-
+	
+	size_t colisions = compute_collisions(table);
+	printf("%lu\n", colisions);
 	//load instace to memory
 	while(1){
 		if(feof(test)) break;
@@ -85,6 +87,6 @@ int main( int argc, char* argv[] ){
 	fclose(dic);
 	fclose(test);
 	
-	return argc;
+	return 0;
 }
 

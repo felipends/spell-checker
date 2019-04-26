@@ -19,23 +19,23 @@
 #include "sll.h"
 #include <math.h>
 
-#define NBUCKETS 262144
+#define NBUCKETS 524288
 
 /*
  * adapted implementation of one-at-a-time jenkins hash function
  * which can be found in http://burtleburtle.net/bob/hash/doobs.html
  */
 
-size_t string_hash( const char* str ){
+inline size_t string_hash( const char* str ){
 	size_t hash = 0;
-	for(size_t i = 0; i < strlen(str); i++){
+	for(size_t i = 0; str[i] != '\0'; i++){
 		hash += str[i];
-		hash += (hash << 10);
-		hash ^= (hash >> 6);
+		hash += (hash << 19);
+		hash ^= (hash >> 11);
 	}
-	hash += (hash << 3);
-	hash ^= (hash >> 11);
-	hash += (hash << 15);
+	hash += (hash << 7);
+	hash ^= (hash >> 20);
+	hash += (hash << 28);
 
 	return hash & (NBUCKETS-1);
 }

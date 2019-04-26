@@ -32,7 +32,7 @@ typedef struct tSLL{
 	size_t size;
 }tSLL;
 
-void sll_preppend( tSLL** list, const char* val ){
+inline void sll_preppend( tSLL** list, const char* val ){
 	if( (*list) == NULL){
 		(*list) = (tSLL*)malloc(sizeof(tSLL));
 		(*list)->head = (Node*)malloc(sizeof(Node));
@@ -50,7 +50,7 @@ void sll_preppend( tSLL** list, const char* val ){
 }
 
 //1 if foind 0 if not
-int sll_search( const tSLL* list, const char* val ){
+inline int sll_search( const tSLL* list, const char* val ){
 	if(list == NULL) return 0;
 	
 	Node* no = (Node*)malloc(sizeof(Node));
