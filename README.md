@@ -20,7 +20,7 @@ Using `instances/dic.txt`
 
 * 307855 words on the dictionary
 * 524288 buckets
-* 61866 collisions (handled by chaining) 
+* 61865 collisions (handled by chaining) 
 * 2 elemnts per colision avarage
 
 ### For the test
@@ -39,9 +39,9 @@ size_t string_hash( const char* str ){
 	for(size_t i = 0; str[i] != '\0'; i++){
 		hash += str[i];
 		hash += (hash << 19);
-		hash ^= (hash >> 11);
+		hash ^= (hash >> 10);
 	}
-	hash += (hash << 7);
+	hash += (hash << 6);
 	hash ^= (hash >> 20);
 	hash += (hash << 28);
 
