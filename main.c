@@ -74,7 +74,8 @@ int main( int argc, char* argv[] ){
 	}
 	end_t = clock();
 	total_t = (double) (end_t - start_t)/CLOCKS_PER_SEC;
-	
+
+    //print result
 	printf("temp total da verificação: %lf\n", total_t);
 	printf("quantidade de palavras que falharam: %lu\n", fail_list->size);
 		
