@@ -50,12 +50,7 @@ inline void sll_preppend( tSLL** list, const char* val ){
 }
 
 //1 if foind 0 if not
-inline int sll_search( const tSLL* list, const char* val ){
-	if(list == NULL) return 0;
-	
-	Node* no = (Node*)malloc(sizeof(Node));
-	no = list->head;
-	
+inline int sll_search( const Node* no, const char* val ){
 	while(1){
 		if(strncmp(no->value, val, SLEN) == 0) {
 			return 1;

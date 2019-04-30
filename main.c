@@ -33,7 +33,7 @@ int main( int argc, char* argv[] ){
 	char palavra[SLEN];
 	tSLL* table[NBUCKETS] = { NULL }; //table firstly initialized as a NULL pointers to list because of the chaining collision handle method
 
-	tSLL* palavras_teste = malloc(sizeof(tSLL));
+	tSLL* palavras_teste = NULL; 
 
 	tSLL* fail_list = NULL;
 
@@ -63,7 +63,8 @@ int main( int argc, char* argv[] ){
 	no = palavras_teste->head;
 	while(1){
 		hash_test = string_hash(no->value);
-		search_result = sll_search(table[hash_test], no->value);
+        if(table[hash_test] == NULL) search_result = 0;
+        else search_result = sll_search(table[hash_test]->head, no->value);
 		if(!search_result){
 			sll_preppend(&fail_list, no->value); 
 		}
@@ -83,7 +84,10 @@ int main( int argc, char* argv[] ){
 	table_deallocate(table);
 	sll_deallocate(&fail_list);
 	sll_deallocate(&palavras_teste);
-	
+
+	free(palavras_teste);
+	free(fail_list);
+
 	fclose(dic);
 	fclose(test);
 	
