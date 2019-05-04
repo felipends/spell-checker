@@ -63,9 +63,11 @@ inline int sll_search( const Node* no, const char* val ){
 	return 0;
 }
 
-void sll_print_list( const Node* head ){
-	while(1){
-		puts(head->value);
+void sll_print_list( const Node* head, FILE* output ){
+	size_t count_word = 0;
+    while(1){
+        count_word++;
+		fprintf(output, "%ld - %s\n", count_word, head->value);
 		if(head->next == NULL) break;
 		head = head->next;
 	}

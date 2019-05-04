@@ -22,7 +22,9 @@
 int main( int argc, char* argv[] ){
 	clock_t start_t, end_t;
 	double total_t;	
-	FILE* dic, * test;
+	FILE* dic, * test, * output;
+
+    output = fopen("output.txt", "w");
 
 	dic = fopen("./instances/dic.txt", "rb");
 	test = fopen(argv[1], "rb");
@@ -45,8 +47,6 @@ int main( int argc, char* argv[] ){
 		palavras_count++;
 	}
 	
-	size_t colisions = compute_collisions(table);
-	printf("%lu\n", colisions);
 	//load instace to memory
 	while(1){
 		if(feof(test)) break;
@@ -76,10 +76,13 @@ int main( int argc, char* argv[] ){
 	total_t = (double) (end_t - start_t)/CLOCKS_PER_SEC;
 
     //print result
-	printf("temp total da verificação: %lf\n", total_t);
-	printf("quantidade de palavras que falharam: %lu\n", fail_list->size);
-		
-	//sll_print_list(palavras_teste->head);
+    fprintf(output, "Número total de palavras do texto: %lu\n", palavras_teste->size);
+	fprintf(output, "Tempo total da verificação: %lfs\n", total_t);
+	fprintf(output, "Número de palavras que falharam no spell check: %lu\n", fail_list->size);
+    fprintf(output, "Lista de palavras que falharam no spell check:\n\n");	
+    fprintf(output, "Num. Ocorrencia - Palavra\n");
+    fprintf(output, "----------------------------------------------------\n");
+	sll_print_list(fail_list->head, output);
 	
 	//memory dealloc
 	table_deallocate(table);
@@ -91,7 +94,7 @@ int main( int argc, char* argv[] ){
 
 	fclose(dic);
 	fclose(test);
-	
+    fclose(output);	
 	return 0;
 }
 

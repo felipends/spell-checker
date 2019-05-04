@@ -14,6 +14,12 @@ Using as reference for the dictionary the file `instances/dic.txt`.
 
 ## Some results
 
+Running on
+
+* DELL Inspiron 3442
+* 4GiB RAM
+* Intel i3-4005U 1.7GHz
+
 ### For the dictionary
 
 Using `instances/dic.txt`
@@ -29,7 +35,7 @@ Using `instances/constituicao.txt` as instance
 
 * 6982 words checked
 * 4787 words failed the spell-checking
-* total checkage time 1.9ms
+* total checkage time 2ms
 
 ## Hash function initially used
 
@@ -54,5 +60,4 @@ An adapted implemantation of one-at-a-time Bob Jenkins hash function, which can 
 
 ##  TODO
 
-1. File formated output
-2. Benchmark with others hash functions
+1. Benchmark with others hash functions
