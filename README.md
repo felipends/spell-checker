@@ -12,6 +12,8 @@ Using as reference for the dictionary the file `instances/dic.txt`.
 
 `$ ./run instances/constituicao.txt`
 
+> Check results on output.txt.
+
 ## Some results
 
 Running on
@@ -19,6 +21,7 @@ Running on
 * DELL Inspiron 3442
 * 4GiB RAM
 * Intel i3-4005U 1.7GHz
+* Manjaro Linux
 
 ### For the dictionary
 
